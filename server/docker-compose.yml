@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  hookserver:
+    build: .
+    image: hookserver
+    container_name: hookserver
+    command: npm run develop
+    ports:
+      - 9000:9000
+    volumes:
+      - ./:/usr/app
+      - /usr/app/node_modules
